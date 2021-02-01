@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Metodlar
 {
@@ -6,41 +8,34 @@ namespace Metodlar
     {
         static void Main(string[] args)
         {
-            string urunAdi = "Alma";
-            double qiymeti = 15;
-            string serh = "Quba almasi";
-
             Urun urun1 = new Urun();
-            urun1.Adi = "alma";
-            urun1.Qiymeti = 15;
-            urun1.serh = "Quba almasi";
-            urun1.StokAdedi = 15;
+            urun1.Id =0001;
+            urun1.Markasi = "LAda";
+            urun1.Model = "2107";
+            urun1.UrunAciklamasi = "Gozel avtomobildir";
+            urun1.Qiymeti = 3500;
 
             Urun urun2 = new Urun();
-            urun2.Adi = "Qarpiz";
-            urun2.Qiymeti = 80;
-            urun2.serh = "Xanabad qarpizi";
-            Urun[] urunler = new Urun[] { urun1, urun2};
-            foreach (Urun urun in urunler)
-            {
-                Console.WriteLine(urun.Adi);
-                Console.WriteLine(urun.Qiymeti);
-                Console.WriteLine(urun.serh);       
-                Console.WriteLine("--------------------");
-            }
+            urun2.Id =0002;
+            urun2.Markasi = "Mercedes";
+            urun2.Model = "C-Klas";
+            urun2.UrunAciklamasi = "Rahat avtomobildir";
+            urun2.Qiymeti = 11200;
 
-            Console.WriteLine("-----------Metodlar----------");
+            Urun urun3 = new Urun();
+            urun3.Id =0003;
+            urun3.Markasi = "BMW";
+            urun3.Model = "520-d";
+            urun3.UrunAciklamasi = "Suretli avtomobildir";
+            urun3.Qiymeti = 15900;
 
+            Urun[] uruns = new Urun[] { urun1 };
+            
             SepetManager sepetManager = new SepetManager();
             sepetManager.Ekle(urun1);
+            sepetManager.Ekle(urun3);
             sepetManager.Ekle(urun2);
-            sepetManager.EkleAlternatif("armut","sari armut",12,3);
-            sepetManager.EkleAlternatif("alma","yasil alma",15,4);
-            sepetManager.EkleAlternatif("kartof","gedebey kartofu",18,5);
-        
-           
 
         }
     }
-
 }
